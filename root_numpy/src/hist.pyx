@@ -7,11 +7,11 @@ def fill_h1(hist,
     # perform type checking on python side
     cdef TH1* _hist = <TH1*> PyCObject_AsVoidPtr(hist)
     cdef SIZE_t size = array.shape[0]
-    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int)
+    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int_)
     cdef SIZE_t i
     cdef int bin_idx
     if return_indices:
-        idx = np.empty(size, dtype=np.int)
+        idx = np.empty(size, dtype=np.int_)
     if weights is not None:
         for i from 0 <= i < size:
             bin_idx = _hist.Fill(array[i], weights[i])
@@ -35,11 +35,11 @@ def fill_h2(hist,
     # perform type checking on python side
     cdef TH2* _hist = <TH2*> PyCObject_AsVoidPtr(hist)
     cdef SIZE_t size = array.shape[0]
-    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int)
+    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int_)
     cdef SIZE_t i
     cdef int bin_idx
     if return_indices:
-        idx = np.empty(size, dtype=np.int)
+        idx = np.empty(size, dtype=np.int_)
     if weights is not None:
         for i from 0 <= i < size:
             bin_idx = _hist.Fill(array[i, 0], array[i, 1], weights[i])
@@ -63,11 +63,11 @@ def fill_h3(hist,
     # perform type checking on python side
     cdef TH3* _hist = <TH3*> PyCObject_AsVoidPtr(hist)
     cdef SIZE_t size = array.shape[0]
-    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int)
+    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int_)
     cdef SIZE_t i
     cdef int bin_idx
     if return_indices:
-        idx = np.empty(size, dtype=np.int)
+        idx = np.empty(size, dtype=np.int_)
     if weights is not None:
         for i from 0 <= i < size:
             bin_idx = _hist.Fill(array[i, 0], array[i, 1], array[i, 2], weights[i])
@@ -91,11 +91,11 @@ def fill_p1(profile,
     # perform type checking on python side
     cdef TProfile* _profile = <TProfile*> PyCObject_AsVoidPtr(profile)
     cdef SIZE_t size = array.shape[0]
-    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int)
+    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int_)
     cdef SIZE_t i
     cdef int bin_idx
     if return_indices:
-        idx = np.empty(size, dtype=np.int)
+        idx = np.empty(size, dtype=np.int_)
     if weights is not None:
         for i from 0 <= i < size:
             bin_idx = _profile.Fill(array[i, 0], array[i, 1], weights[i])
@@ -119,11 +119,11 @@ def fill_p2(profile,
     # perform type checking on python side
     cdef TProfile2D* _profile = <TProfile2D*> PyCObject_AsVoidPtr(profile)
     cdef SIZE_t size = array.shape[0]
-    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int)
+    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int_)
     cdef SIZE_t i
     cdef int bin_idx
     if return_indices:
-        idx = np.empty(size, dtype=np.int)
+        idx = np.empty(size, dtype=np.int_)
     if weights is not None:
         for i from 0 <= i < size:
             bin_idx = _profile.Fill(array[i, 0], array[i, 1], array[i, 2], weights[i])
@@ -147,11 +147,11 @@ def fill_p3(profile,
     # perform type checking on python side
     cdef TProfile3D* _profile = <TProfile3D*> PyCObject_AsVoidPtr(profile)
     cdef SIZE_t size = array.shape[0]
-    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int)
+    cdef np.ndarray[np.int_t, ndim=1] idx = np.empty(0, dtype=np.int_)
     cdef SIZE_t i
     cdef int bin_idx
     if return_indices:
-        idx = np.empty(size, dtype=np.int)
+        idx = np.empty(size, dtype=np.int_)
     if weights is not None:
         for i from 0 <= i < size:
             bin_idx = _profile.Fill(array[i, 0], array[i, 1], array[i, 2], array[i, 3], weights[i])
